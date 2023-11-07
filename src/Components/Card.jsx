@@ -1,10 +1,15 @@
-export default function Card() {
+export default function SongCard({ album }) {
   return (
-    <div className="h-[250px] max-w-[280px] cursor-pointer overflow-hidden relative rounded-lg">
-      <img className="transition-all ease-in hover:scale-105" />
-      <div className="flex justify-start absolute bottom-0 w-full p-2 text-white font-semibold bg-black/50">
-        New Album
+    <div className="flex flex-col gap-2 min-w-[8rem] max-w-[12rem]  p-4 cursor-pointer bg-opacity-80 backdrop-blur-sm animate-slideup">
+      <div className="relative w-full h-50 group overflow-hidden rounded-lg ">
+        <img src={album.image} alt={album.title} />
+        <div className="absolute py-3 px-1 bg-white/40 bottom-0 w-full z-10 ">
+          <span className="text-white text-sm px-1 py-1 bg-b1 rounded-lg">
+            {album.follows} Follows
+          </span>
+        </div>
       </div>
+      <div className="text-white px-1 text-sm font-medium">{album.title}</div>
     </div>
   );
 }
