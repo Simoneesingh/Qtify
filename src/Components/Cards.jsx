@@ -20,9 +20,9 @@ export default function Cards({ url, title }) {
           <Loader />
         </div>
       ) : (
-        <div>
+        <div className="px-8">
           <h1 className="text-white font-bold text-3xl">{title}</h1>
-          <div className="flex flex-wrap sm:justify-start justify-center gap-4">
+          <div className="flex flex-wrap sm:justify-start justify-center gap-[5px]">
             {albums?.map((album) => (
               <div key={albums.id} className="min-w-[160px] md:min-w-[200px]">
                 <Card album={album} />

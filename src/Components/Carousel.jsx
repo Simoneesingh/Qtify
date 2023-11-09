@@ -5,25 +5,27 @@ import { useEffect, useState } from "react";
 import useAxios from "../hooks/useAxios";
 import Card from "./Card";
 
-export default function Carousel({ url }) {
+export default function Carousel({ url, songs }) {
   const [albums, setAlbums] = useState([]);
-  const { response, loading } = useAxios(url);
+
+  const { response } = useAxios(url);
 
   useEffect(() => {
-    if (response) {
-      setAlbums(response);
+    if (!songs?.length) {
+      if (response) {
+        setAlbums(response);
+      }
+    } else {
+      setAlbums(songs);
     }
-  }, [response]);
+  }, [response, songs]);
 
-  console.log(response);
   return (
     <Swiper
       modules={[Navigation]}
       spaceBetween={5}
       slidesPerView={"auto"}
       navigation
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
     >
       {albums.map((album) => (
         <SwiperSlide key={album.id} className="max-w-[12rem]">

@@ -14,6 +14,7 @@ export default function (request) {
       try {
         const res = await axios.get(request);
         setResponse(res.data);
+       
       } catch (err) {
         setError(err);
       } finally {

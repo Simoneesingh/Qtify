@@ -11,8 +11,8 @@ export default function Section({ title, url }) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex items-center justify-between px-4">
-        <h1 className="text-white font-bold text-3xl">{title}</h1>
+      <div className="flex items-center justify-between mt-4 px-4">
+        <h1 className="text-white font-bold text-2xl ">{title}</h1>
         <button className="text-b2 font-bold text-xl" onClick={handleToggle}>
           {toggle ? "Collapse" : "Show All"}
         </button>
