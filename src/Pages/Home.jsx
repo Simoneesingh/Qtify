@@ -1,7 +1,6 @@
 import Cards from "../Components/Cards";
-// import Carousel from "../Components/Carousel";
 import FAQ from "../Components/FAQ";
-import Footer from "../Components/Footer";
+// import Footer from "../Components/Footer";
 import GenreSelector from "../Components/GenreSelector";
 import HomeBanner from "../Components/HomeBanner";
 import NavBar from "../Components/NavBar";
@@ -22,8 +21,8 @@ export default function Home() {
       <GenreSelector />
       <hr className="border-t-2 border-b2" />
       <FAQ />
-      <hr className="border-t-2 border-collapse-b3 drop-shadow-2xl" />
-      <Footer />
+      {/* <hr className="border-t-2 border-collapse-b3 drop-shadow-2xl" />
+      <Footer /> */}
     </div>
   );
 }
